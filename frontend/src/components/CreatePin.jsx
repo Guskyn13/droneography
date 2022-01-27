@@ -74,8 +74,8 @@ const CreatePin = ({ user }) => {
             {fields && (
                 <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in">Please add all fields.</p>
             )}
-            <div className="flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5 w-full">
-                <div className="bg-secondaryColor p-3 flex-0.7 w-full">
+            <div className="flex lg:flex-row flex-col justify-center items-center bg-gray-500 rounded-lg lg:p-5 p-3 lg:w-4/5 w-full">
+                <div className="p-3 flex-0.7 w-full bg-gray-500">
                     <div className="flex justify-center items-center flex-col border-2 border-dotted border-gray-300 p-3 w-full h-420">
                         {loading && <Rings />}
                         {wrongImageType && <p>Wrong image type</p>}
@@ -118,10 +118,10 @@ const CreatePin = ({ user }) => {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="Add your title"
-                        className="outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-200 p-2"
+                        className="outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-400 p-2 bg-gray-500"
                     />
                     {user && (
-                        <div className="flex gap-2 my-2 items-center bg-white rounded-lg ">
+                        <div className="flex gap-2 my-2 items-center bg-gray-500 rounded-lg ">
                             <img
                                 src={user.image}
                                 className="w-10 h-10 rounded-full"
@@ -136,7 +136,7 @@ const CreatePin = ({ user }) => {
                         value={about}
                         onChange={(e) => setAbout(e.target.value)}
                         placeholder="What your Pin is about"
-                        className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+                        className="outline-none text-base sm:text-lg border-b-2 border-gray-400 p-2 bg-gray-500"
                     />
 
                     <input
@@ -144,7 +144,7 @@ const CreatePin = ({ user }) => {
                         vlaue={destination}
                         onChange={(e) => setDestination(e.target.value)}
                         placeholder="Add a destination link"
-                        className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+                        className="outline-none text-base sm:text-lg border-b-2 border-gray-400 p-2 bg-gray-500"
                     />
 
                     <div className="flex flex-col">
@@ -154,11 +154,11 @@ const CreatePin = ({ user }) => {
                                 onChange={(e) => {
                                     setCategory(e.target.value);
                                 }}
-                                className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
+                                className="outline-none w-4/5 text-base p-2 rounded-md cursor-pointer bg-gray-500"
                             >
-                                <option value="others" className="bg-white">Select Category</option>
+                                <option value="others" className="bg-gray-500">Select Category</option>
                                 {categories.map((category) => (
-                                    <option className="text-base border-0 outline-none capitalize bg-white text-black" value={category.name}>
+                                    <option className="text-base border-0 outline-none capitalize bg-gray-400 text-black" value={category.name} key={category.name}>
                                         {category.name}
                                     </option>
                                 ))}
@@ -168,7 +168,7 @@ const CreatePin = ({ user }) => {
                             <button
                                 type="button"
                                 onClick={savePin}
-                                className="bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none"
+                                className="bg-blue-800 text-white font-bold p-2 rounded-full w-28 outline-none"
                             >
                                 Save Pin
                             </button>
