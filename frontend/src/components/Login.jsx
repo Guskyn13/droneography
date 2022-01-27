@@ -2,8 +2,8 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import shareVideo from '../images/share.mp4';
-import logo from '../images/logowhite.png';
+import loginVid from '../images/loginBG.mp4';
+import droneIcon from '../images/droneIcon.png';
 import { client } from '../client';
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
         <div className='flex justify-start items-center flex-col h-screen'>
             <div className='relative w-full h-full'>
                 <video
-                    src={shareVideo}
+                    src={loginVid}
                     type="video/mp4"
                     loop
                     controls={false}
@@ -38,7 +38,10 @@ const Login = () => {
             </div>
             <div className='absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay'>
                 <div className='p-5'>
-                    <img src={logo} width="130px" alt="logo" />
+                    <img src={droneIcon} width="130px" alt="logo" />
+                </div>
+                <div className='text-white text-3xl pb-3 font-semibold'>
+                    <h2>Dronography</h2>
                 </div>
                 <div className='shadow-2xl'>
                     <GoogleLogin 
